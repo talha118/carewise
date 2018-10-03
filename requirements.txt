@@ -1,7 +1,6 @@
 contextlib2==0.5.5
 Django==1.11.15
 djangorestframework==3.8.2
-pkg-resources==0.0.0
 python-decouple==3.1
 pytz==2018.5
 raven==6.9.0
