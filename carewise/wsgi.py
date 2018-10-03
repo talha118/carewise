@@ -1,5 +1,5 @@
 """
-WSGI config for healthcare project.
+WSGI config for carewise project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
