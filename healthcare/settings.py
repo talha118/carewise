@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'b4&j@e!-!4tp25@e0#6g!1%_8sw9n+ovj3uby&5l-9r9umzo(z'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -119,28 +119,10 @@ USE_L10N = True
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/1.11/howto/static-files/
-
-# this defines the url for static files
-# eg: base-url.com/static/your-js-file.js
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 
-# this is directory name where collectstatic files command will put your app level static files
-# STATIC_ROOT = 'staticfiles'
-#
-# # this is directory paths where you have to put your project level static files
-# # you can put multiple folders here
-# STATICFILES_DIRS = [
-#     os.path.join(BASE_DIR, "static"),
-#  ]
-# # print STATICFILES_DIRS
-# #
-# STATICFILES_FINDERS = (
-#     'django.contrib.staticfiles.finders.FileSystemFinder',
-#     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-# #    'django.contrib.staticfiles.finders.DefaultStorageFinder',
-# )
-
-
-
+# Extra places for collectstatic to find static files.
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
