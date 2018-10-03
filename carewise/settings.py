@@ -26,7 +26,7 @@ SECRET_KEY = 'b4&j@e!-!4tp25@e0#6g!1%_8sw9n+ovj3uby&5l-9r9umzo(z'
 DEBUG = False
 
 
-ALLOWED_HOSTS = [".herokuapp.com",]
+ALLOWED_HOSTS = [".herokuapp.com"]
 
 
 # Application definition
@@ -57,7 +57,7 @@ AUTH_USER_MODEL = 'login.User'
 
 ROOT_URLCONF = 'carewise.urls'
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'carewise.storage.WhiteNoiseStaticFilesStorage'
 
 TEMPLATES = [
     {
@@ -87,6 +87,47 @@ DATABASES = {
     }
 }
 
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'filters': {
+        'require_debug_false': {
+            '()': 'django.utils.log.RequireDebugFalse'
+        }
+    },
+    'formatters': {
+        'verbose': {
+            'format': '[contactor] %(levelname)s %(asctime)s %(message)s'
+        },
+    },
+    'handlers': {
+        # Send all messages to console
+        'console': {
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+        },
+        # Warning messages are sent to admin emails
+        'mail_admins': {
+            'level': 'WARNING',
+            'filters': ['require_debug_false'],
+            'class': 'django.utils.log.AdminEmailHandler',
+        },
+        # critical errors are logged to sentry
+        'sentry': {
+            'level': 'ERROR',
+            'filters': ['require_debug_false'],
+            'class': 'raven.contrib.django.handlers.SentryHandler',
+        },
+    },
+    'loggers': {
+        # This is the "catch all" logger
+        '': {
+            'handlers': ['console', 'mail_admins', 'sentry'],
+            'level': 'DEBUG',
+            'propagate': False,
+        },
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
