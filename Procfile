@@ -1,2 +1,1 @@
-web: gunicorn carewise.wsgi --log-file -
-
+web: gunicorn carewise.wsgi:application --log-file -
