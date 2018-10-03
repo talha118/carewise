@@ -1,0 +1,48 @@
+<html>
+{% load static%}
+<head>
+	<title></title>
+	<link rel="stylesheet" href="{% static "login/main.css" %}" type ="text/css" >
+{#    	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">#}
+
+</head>
+<body>
+	<div class="login-page">
+	  <div class="form">
+	    <form class="login-form">
+	      <input id= 'username' type="text" placeholder="username"/>
+	      <input id ='password' type="password" placeholder="password"/>
+	      <button id='login-button'>login</button>
+	    </form>
+          <p id="invalid" style="color:red">Invalid Credentials</p>
+	  </div>
+	</div>
+</body>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+		integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+		crossorigin="anonymous">	  	
+</script>
+<script>
+    $('#invalid').hide()
+	$('#login-button').click((e)=>{
+		e.preventDefault()
+        $.ajax({
+            type:'post',
+            url:{% url 'login' %},
+            data:{'username' : $('#username').val(), 'password': $('#password').val()},
+            headers:{
+              'X-CSRFToken': '{{ csrf_token }}',
+                'sessionid':"{{ request.session }}"
+            },
+            success:()=>{
+                const href = location.href
+                window.location.href = href  + "main"
+            },
+            error:()=>{
+                $('#invalid').show()
+            }
+        });
+	})
+</script>
+{#<script type="text/javascript" src='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js'></script>#}
+</html>
