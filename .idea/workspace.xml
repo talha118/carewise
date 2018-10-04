@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="270335ac-7747-4e9e-a531-0d44a7aa9502" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/carewise/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/carewise/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -44,7 +43,7 @@
         <counts>
           <entry key="Procfile" value="27" />
           <entry key="html" value="1" />
-          <entry key="py" value="152" />
+          <entry key="py" value="154" />
           <entry key="txt" value="27" />
         </counts>
       </usages-collector>
@@ -52,7 +51,7 @@
         <counts>
           <entry key="HTML" value="1" />
           <entry key="PLAIN_TEXT" value="54" />
-          <entry key="Python" value="152" />
+          <entry key="Python" value="154" />
         </counts>
       </usages-collector>
     </session>
@@ -74,8 +73,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/carewise/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="529">
-              <caret line="94" column="48" selection-start-line="94" selection-start-column="48" selection-end-line="94" selection-end-column="48" />
+            <state relative-caret-position="300">
+              <caret line="95" column="39" selection-start-line="95" selection-start-column="39" selection-end-line="95" selection-end-column="39" />
               <folding>
                 <element signature="e#313#322#0" expanded="true" />
               </folding>
@@ -404,8 +403,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/carewise/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="529">
-          <caret line="94" column="48" selection-start-line="94" selection-start-column="48" selection-end-line="94" selection-end-column="48" />
+        <state relative-caret-position="300">
+          <caret line="95" column="39" selection-start-line="95" selection-start-column="39" selection-end-line="95" selection-end-column="39" />
           <folding>
             <element signature="e#313#322#0" expanded="true" />
           </folding>

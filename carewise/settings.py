@@ -92,7 +92,11 @@ WSGI_APPLICATION = 'carewise.wsgi.application'
 
 #heroku database
 
-DATABASES['default'] =  dj_database_url.config()
+DATABASES = {
+    'default': dj_database_url.config()
+}
+
+# DATABASES['default'] =  dj_database_url.config()
 
 LOGGING = {
     'version': 1,
