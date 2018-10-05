@@ -16,8 +16,7 @@ class MyUserAdmin(UserAdmin):
     form = MyUserChangeForm
 
     fieldsets = UserAdmin.fieldsets + (
-            (None, {'fields': ('url',)}),
+            (None, {'fields': ('requested_view',)}),
     )
-
 
 admin.site.register(User, MyUserAdmin)

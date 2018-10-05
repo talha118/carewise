@@ -26,11 +26,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'b4&j@e!-!4tp25@e0#6g!1%_8sw9n+ovj3uby&5l-9r9umzo(z'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 
-ALLOWED_HOSTS = [".herokuapp.com"]
-
+# ALLOWED_HOSTS = [".herokuapp.com"]
 
 # Application definition
 
@@ -62,6 +61,8 @@ ROOT_URLCONF = 'carewise.urls'
 
 STATICFILES_STORAGE = 'carewise.storage.WhiteNoiseStaticFilesStorage'
 
+TABLEAU_IP = 'http://137.117.33.75/trusted'
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -83,18 +84,18 @@ WSGI_APPLICATION = 'carewise.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}
 
 #heroku database
 
-DATABASES = {
-    'default': dj_database_url.config()
-}
+# DATABASES = {
+#     'default': dj_database_url.config()
+# }
 
 # DATABASES['default'] =  dj_database_url.config()
 

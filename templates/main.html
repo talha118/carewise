@@ -38,24 +38,36 @@
       {
           position:absolute; left: 0; right: 0; bottom: 0; top: 55px;
       }
+    #content-middle{
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+    }
 	</style>
 </head>
 <body>
 <nav class="navbar navbar-light bg-dark justify-content-between">
-  <a class="navbar-brand" style="color:white">Navbar</a>
+  <a class="navbar-brand" style="color:white">Carewise</a>
   <form class="form-inline">
     <button class="btn" id='logout-button'>Logout</button>
   </form>
 </nav>
-<div id="content"> <iframe width="100%" height="100%" frameborder="0" src="{{ request.user.url }}"></iframe></div>
 
+{% if response_url %}
+<div id="content"> <iframe width="100%" height="100%" frameborder="0" src="{{ response_url  }}"></iframe></div>
+{% else %}
+<div id = 'content-middle'>
+<h3>There was some problem. Try reloading the page or contact us, we will fix it for you.</h3>
+
+</div>
+{% endif %}
 
 </body>
 <!-- Footer -->
 <footer class="footer">
   <div class="container">
-   <div class="footer-copyright text-center">© 2018 Copyright:
-    <a href="https://mdbootstrap.com/bootstrap-tutorial/"> MDBootstrap.com</a>
+   <div class="footer-copyright text-center">© 2018 Copyright: Carewise
   </div>
   </div>
 </footer>

@@ -8,7 +8,7 @@ from django.contrib.auth import authenticate, login, logout
 from rest_framework.decorators import api_view
 from django.http.response import HttpResponseBadRequest
 from django.contrib.auth.decorators import login_required
-# Create your views here.
+from login.utils import trusted_authentication_tableau
 
 def home_view(request):
     return render(request, 'index.html', locals())
@@ -32,8 +32,10 @@ def login_user(request):
 
 @login_required
 def main_page(request):
-    return render(request, 'main.html')
+    response_url = trusted_authentication_tableau(request.user.requested_view, request.user.username)
+    return render(request, 'main.html', locals())
 
 def logout_view(request):
     logout(request)
     return redirect('home')
+

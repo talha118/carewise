@@ -15,7 +15,6 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from django.views.generic import TemplateView
 from login import views as login_views
 
 urlpatterns = [
@@ -23,5 +22,5 @@ urlpatterns = [
     url('^$', login_views.home_view, name='home'),
     url(r'^login/$',login_views.login_user, name='login'),
     url(r'^main',login_views.main_page, name='main'),
-    url(r'^logut/$',login_views.logout_view, name='logout')
+    url(r'^logout/$',login_views.logout_view, name='logout')
 ]

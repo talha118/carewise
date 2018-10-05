@@ -9,4 +9,4 @@ from django.contrib.auth.models import AbstractUser
 
 
 class User(AbstractUser):
-	url = models.CharField(max_length =1000)
+	requested_view = models.CharField(max_length =1000)
