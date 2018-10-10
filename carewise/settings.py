@@ -61,7 +61,7 @@ ROOT_URLCONF = 'carewise.urls'
 
 STATICFILES_STORAGE = 'carewise.storage.WhiteNoiseStaticFilesStorage'
 
-TABLEAU_IP = 'http://137.117.33.75/trusted'
+TABLEAU_IP = 'https://productmanagercourse.com/trusted'
 
 TEMPLATES = [
     {
